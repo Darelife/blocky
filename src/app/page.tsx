@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import NavBar from "./components/navBar";
-import FadingText from "./components/fadingText";
-import ConnectWalletButton from "./components/metaaaa";
+// import FadingText from "./components/fadingText";
+// import ConnectWalletButton from "./components/metaaaa";
 
 export default function Home() {
   const [theme, setTheme] = useState("light");
