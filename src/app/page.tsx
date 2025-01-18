@@ -2,7 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import NavBar from "./components/navBar";
-import Dashboard from "./components/dashboard";
+// import Dashboard from "./components/dashboard";
+import PlusButton from "./components/PlusButton";
+import CompanyInfoWindow from "./components/CompanyInfoWindow";
 // import FadingText from "./components/fadingText";
 // import ConnectWalletButton from "./components/metaaaa";
 
@@ -51,7 +53,9 @@ export default function Home() {
       <div className="flex justify-center items-center min-h-screen">
         <h1 className="md:text-9xl text-6xl font-sans font-black">BLOCKY</h1>
       </div>
-      <Dashboard />
+      {/* <Dashboard /> */}
+      <PlusButton onClick={() => console.log("Clicked")} />
+      <CompanyInfoWindow companyName="Netflix" since="1997" totalSpent={1000000} inUsd={true} onClose={() => console.log("Closed")} />
     </div>
   );
 }

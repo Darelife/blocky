@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface CompanyInfoWindowProps {
   companyName: string;
@@ -36,13 +37,15 @@ const CompanyInfoWindow: React.FC<CompanyInfoWindowProps> = ({
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-      }}
-    >
-      <img
-        src={logoUrl}
-        alt={`${companyName} logo`}
-        style={{ width: "80px", height: "80px", marginBottom: "10px" }}
-      />
+        }}
+      >
+        <Image
+          src={logoUrl}
+          alt={`${companyName} logo`}
+          width={80}
+          height={80}
+          style={{ marginBottom: "10px" }}
+        />
       <h2 style={{ fontSize: "18px", margin: "5px 0" }}>{companyName}</h2>
       <p style={{ fontSize: "14px", color: "#666" }}>{domain}</p>
       <div style={{ marginTop: "10px", fontSize: "14px" }}>
