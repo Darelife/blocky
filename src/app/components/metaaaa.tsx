@@ -28,7 +28,6 @@ const ConnectWalletButton: React.FC = () => {
         // Set the first account address
         setState({ account: accounts[0], error: null });
       } catch (err) {
-        setState({ account: null, error: 'Error connecting to MetaMask' });
         console.log(err);
       }
     } else {
@@ -41,7 +40,7 @@ const ConnectWalletButton: React.FC = () => {
       <button 
       onClick={connectWallet} 
       style={{ 
-      padding: '2px 10px', 
+      padding: '6px 10px', 
       fontSize: '16px', 
       cursor: 'pointer', 
       backgroundColor: document.body.classList.contains('dark') ? '#fff' : '#121212', 
