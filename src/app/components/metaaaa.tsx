@@ -37,14 +37,14 @@ const ConnectWalletButton: React.FC = () => {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <button 
       onClick={connectWallet} 
       style={{ 
-        padding: '10px 20px', 
+        padding: '2px 10px', 
         fontSize: '16px', 
         cursor: 'pointer', 
-        backgroundColor: '#007bff', 
+        backgroundColor: '#121212', 
         color: '#fff', 
         border: 'none', 
         borderRadius: '5px',
@@ -55,7 +55,7 @@ const ConnectWalletButton: React.FC = () => {
       >
       {state.account ? `Connected: ${state.account}` : 'Connect to MetaMask'}
       </button>
-      {state.error && <p style={{ color: 'red', marginTop: '10px' }}>{state.error}</p>}
+      {state.error && <p style={{ color: 'red'}}>{state.error}</p>}
     </div>
   );
 };
