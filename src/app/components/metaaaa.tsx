@@ -47,11 +47,11 @@ const ConnectWalletButton: React.FC = () => {
       <button 
       onClick={connectWallet} 
       style={{ 
-      padding: '6px 10px', 
+      padding: '2px 10px', 
       fontSize: '16px', 
       cursor: 'pointer', 
-      backgroundColor: document.body.classList.contains('dark') ? '#fff' : '#121212', 
-      color: document.body.classList.contains('dark') ? '#000' : '#fff', 
+      backgroundColor: isDarkMode? '#fff' : '#121212', 
+      color: isDarkMode ? '#000' : '#fff', 
       border: 'none', 
       borderRadius: '5px',
       transition: 'background-color 0.3s ease'
