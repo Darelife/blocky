@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import NavBar from "./components/navBar";
+// import Functionality from "./components/functionality";
 // import FadingText from "./components/fadingText";
 // import ConnectWalletButton from "./components/metaaaa";
 
@@ -48,9 +49,9 @@ export default function Home() {
 
       <NavBar toggleTheme={toggleTheme} />
       <div className="flex justify-center items-center min-h-screen mt-[-4em]">
-        <h1 className="md:text-9xl text-6xl font-mono font-black">BLOCKY</h1>
+        <h1 className="md:text-9xl text-6xl font-sans font-black">BLOCKY</h1>
       </div>
-
+      {/* <Functionality /> */}
     </div>
   );
 }
