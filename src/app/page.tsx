@@ -42,6 +42,9 @@ export default function Home() {
       )}
 
       <NavBar toggleTheme={toggleTheme} />
+      <div className="flex justify-center items-center min-h-screen mt-[-4em]">
+        <h1 className="md:text-9xl text-6xl font-mono font-black">BLOCKY</h1>
+      </div>
     </div>
   );
 }
