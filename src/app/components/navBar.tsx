@@ -15,7 +15,6 @@ const NavBar = ({ toggleTheme }: { toggleTheme: () => void }) => {
               className="h-6 w-6"
               fill="none"
               stroke="currentColor"
-              viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -29,7 +28,7 @@ const NavBar = ({ toggleTheme }: { toggleTheme: () => void }) => {
           </Button>
         </SheetTrigger>
         {/* <SheetContent side="left" className="bg-white shadow-lg"> */}
-        <SheetContent side="left" className="bg-white dark:bg-gray-800 shadow-lg !backdrop-blur-none !bg-opacity-100">
+        <SheetContent side="left" className="bg-white dark:bg-black shadow-lg !backdrop-blur-none !bg-opacity-100">
           <nav className="flex flex-col space-y-4">
             <Link href="/" className="text-lg font-medium" prefetch={false}>
               Blocky
