@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
 
+declare global {
+  interface Window {
+    ethereum: {
+      request: (args: { method: string }) => Promise<string[]>;
+    };
+  }
+}
+
 interface IState {
   account: string | null;
   error: string | null;
@@ -21,7 +29,7 @@ const ConnectWalletButton: React.FC = () => {
         setState({ account: accounts[0], error: null });
       } catch (err) {
         setState({ account: null, error: 'Error connecting to MetaMask' });
-        console.error(err);
+        console.log(err);
       }
     } else {
       setState({ account: null, error: 'MetaMask is not installed' });
