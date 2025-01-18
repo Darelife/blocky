@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import NavBar from "./components/navBar";
-// import Functionality from "./components/functionality";
+import Dashboard from "./components/dashboard";
 // import FadingText from "./components/fadingText";
 // import ConnectWalletButton from "./components/metaaaa";
 
@@ -10,6 +10,7 @@ export default function Home() {
   const [theme, setTheme] = useState("light");
   const [isAnimating, setIsAnimating] = useState(false); // Controls sheet visibility
   const [overlayColor, setOverlayColor] = useState("#121212"); // Default dark theme overlay
+  const [scrollY, setScrollY] = useState(0);
 
   // Load the initial theme from localStorage
   useEffect(() => {
@@ -38,6 +39,17 @@ export default function Home() {
     }, 1000); // Match the animation duration
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className={`relative overflow-hidden ${theme === "dark" ? "dark" : ""}`}>
       {isAnimating && (
@@ -48,10 +60,10 @@ export default function Home() {
       )}
 
       <NavBar toggleTheme={toggleTheme} />
-      <div className="flex justify-center items-center min-h-screen mt-[-4em]">
+      <div className="flex justify-center items-center min-h-screen">
         <h1 className="md:text-9xl text-6xl font-sans font-black">BLOCKY</h1>
       </div>
-      {/* <Functionality /> */}
+      <Dashboard />
     </div>
   );
 }
