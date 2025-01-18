@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Algomaniax",
-  description: "The Official Competitive Programming Club of BITS Goa",
+  title: "Blocky",
+  description: "A Cross Border Payment System using Blockchain",
 };
 
 export default function RootLayout({
