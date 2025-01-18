@@ -15,24 +15,36 @@ interface IState {
 
 const ConnectWalletButton: React.FC = () => {
   const [state, setState] = useState<IState>({ account: null, error: null });
+  // const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Function to connect to MetaMask
+  // useEffect(() => {
+  //   if (typeof document !== 'undefined') {
+  //     setIsDarkMode(document.body.classList.contains('dark'));
+  //   }
+  // }, []);
+
+  // Function to connect or disconnect MetaMask
   const connectWallet = async () => {
-    if (window.ethereum) {
-      try {
-        // Request account access
-        const accounts: string[] = await window.ethereum.request({
-          method: 'eth_requestAccounts',
-        });
-
-        // Set the first account address
-        setState({ account: accounts[0], error: null });
-      } catch (err) {
-        setState({ account: null, error: 'Error connecting to MetaMask' });
-        console.log(err);
-      }
+    if (state.account) {
+      // Disconnect wallet
+      setState({ account: null, error: null });
     } else {
-      setState({ account: null, error: 'MetaMask is not installed' });
+      if (window.ethereum) {
+        try {
+          // Request account access
+          const accounts: string[] = await window.ethereum.request({
+            method: 'eth_requestAccounts',
+          });
+
+          // Set the first account address
+          setState({ account: accounts[0], error: null });
+        } catch (err) {
+          setState({ account: null, error: 'Error connecting to MetaMask' });
+          console.log(err);
+        }
+      } else {
+        setState({ account: null, error: 'MetaMask is not installed' });
+      }
     }
   };
 
@@ -53,7 +65,7 @@ const ConnectWalletButton: React.FC = () => {
         // onMouseOver={(e) => (e.currentTarget.style.backgroundColor = isDarkMode ? '#ffcc00' : '#8c8c8c')}
         // onMouseOut={(e) => (e.currentTarget.style.backgroundColor = isDarkMode ? '#fff' : '#121212')}
       >
-        {state.account ? `Connected: ${state.account}` : 'Connect to MetaMask'}
+        {state.account ? `Disconnect from MetaMask` : 'Connect to MetaMask'}
       </button>
       {state.error && <p style={{ color: 'red'}}>{state.error}</p>}
     </div>
