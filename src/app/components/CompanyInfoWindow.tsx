@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 interface CompanyInfoWindowProps {
@@ -14,59 +14,61 @@ const CompanyInfoWindow: React.FC<CompanyInfoWindowProps> = ({
   since,
   totalSpent,
   inUsd,
-  onClose,
 }) => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false);
+
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      setIsDarkMode(document.body.classList.contains("dark"));
+    }
+  }, []);
+
   const domain = `${companyName.toLowerCase().replace(/\s+/g, "")}.com`;
   const logoUrl = `https://logo.clearbit.com/${domain}`;
+
+  const toggleCollapse = () => {
+    setIsCollapsed(!isCollapsed);
+  };
 
   return (
     <div
       style={{
-        position: "fixed",
-        top: "50%",
-        left: "50%",
-        transform: "translate(-50%, -50%)",
-        width: "300px",
-        height: "300px",
-        backgroundColor: "white",
-        border: "1px solid #ccc",
-        borderRadius: "8px",
-        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-        padding: "20px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        }}
-      >
-        <Image
-          src={logoUrl}
-          alt={`${companyName} logo`}
-          width={80}
-          height={80}
-          style={{ marginBottom: "10px" }}
-        />
-      <h2 style={{ fontSize: "18px", margin: "5px 0" }}>{companyName}</h2>
-      <p style={{ fontSize: "14px", color: "#666" }}>{domain}</p>
-      <div style={{ marginTop: "10px", fontSize: "14px" }}>
-        <p><strong>Since:</strong> {since}</p>
-        <p><strong>Total Spent:</strong> ${totalSpent.toFixed(2)}</p>
-        <p><strong>In USD:</strong> {inUsd ? "Yes" : "No"}</p>
-      </div>
-      <button
-        onClick={onClose}
+        position: "relative",
+        bottom: "0",
+        width: "100%",
+        backgroundColor: isDarkMode ? "#333" : "white",
+        color: isDarkMode ? "white" : "black",
+        borderTop: isDarkMode ? "1px solid #555" : "1px solid #ccc",
+        borderRadius: "8px 8px 0 0",
+        boxShadow: "0 -4px 8px rgba(0, 0, 0, 0.2)",
+        zIndex: 1000,
+      }}
+    >
+
+      <div
+        onClick={toggleCollapse}
         style={{
-          marginTop: "20px",
-          padding: "10px 20px",
-          backgroundColor: "#007BFF",
-          color: "white",
-          border: "none",
-          borderRadius: "4px",
+          display: "flex",
+          alignItems: "center",
+          backgroundColor: "gray",
+          padding: "10px",
           cursor: "pointer",
+          borderTopLeftRadius: "8px",
+          borderTopRightRadius: "8px",
         }}
       >
-        Close
-      </button>
+        <Image src={logoUrl} alt={`${companyName} logo`} width={50} height={50} />
+        <h2 style={{ marginLeft: "10px" }}>{companyName}</h2>
+      </div>
+      {!isCollapsed && (
+        <div style={{ padding: "20px" }}>
+          <p>Since: {since}</p>
+          <p>
+            Total Spent: {totalSpent} {inUsd ? "USD" : "Other Currency"}
+          </p>
+        </div>
+      )}
     </div>
   );
 };
