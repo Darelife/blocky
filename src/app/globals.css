@@ -22,11 +22,25 @@ body {
   --background: #ffffff;
   --foreground: #000000;
 }
-
 .dark {
   --background: #121212;
   --foreground: #ffffff;
 }
+
+body ::selection {
+  background: #ffcc00;
+  /* color: #121212; */
+}
+body.dark ::selection {
+  background: #8c8c8c;
+  /* color: #121212; */
+}
+/* 
+::selection {
+  background: var(--selection-background);
+  text-decoration: inherit;
+  background: var(--background) == '#121212'? 'yellow' : '#8c8c8c';
+} */
 
 @keyframes slide {
   0% {

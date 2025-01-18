@@ -15,6 +15,7 @@ export default function Home() {
     const storedTheme = localStorage.getItem("theme") || "light";
     setTheme(storedTheme);
     document.documentElement.classList.toggle("dark", storedTheme === "dark");
+    document.body.classList.toggle("dark", storedTheme === "dark");
   }, []);
 
   // Handle theme toggle with animation
@@ -26,6 +27,8 @@ export default function Home() {
     setTimeout(() => {
       setTheme(newTheme);
       document.documentElement.classList.toggle("dark", newTheme === "dark");
+      document.body.classList.toggle("dark", newTheme === "dark");
+      
       localStorage.setItem("theme", newTheme);
     }, 500); // Change theme halfway through the animation
 
