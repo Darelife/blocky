@@ -4,6 +4,7 @@ import React from "react";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import ConnectWalletButton from "./metaaaa";
 
 const NavBar = ({ toggleTheme }: { toggleTheme: () => void }) => {
   return (
@@ -27,7 +28,6 @@ const NavBar = ({ toggleTheme }: { toggleTheme: () => void }) => {
             <span className="sr-only">Toggle navigation menu</span>
           </Button>
         </SheetTrigger>
-        {/* <SheetContent side="left" className="bg-white shadow-lg"> */}
         <SheetContent side="left" className="bg-white dark:bg-black shadow-lg !backdrop-blur-none !bg-opacity-100">
           <nav className="flex flex-col space-y-4">
             <Link href="/" className="text-lg font-medium" prefetch={false}>
@@ -36,6 +36,7 @@ const NavBar = ({ toggleTheme }: { toggleTheme: () => void }) => {
             <Link href="/about" className="text-lg font-medium" prefetch={false}>
               About
             </Link>
+            <ConnectWalletButton />
           </nav>
         </SheetContent>
       </Sheet>
@@ -46,6 +47,7 @@ const NavBar = ({ toggleTheme }: { toggleTheme: () => void }) => {
         <Link href="/about" className="text-lg font-medium" prefetch={false}>
           About
         </Link>
+        <ConnectWalletButton />
       </div>
       <Button
         variant="outline"
