@@ -21,7 +21,7 @@ const ConnectWalletButton: React.FC = () => {
         setState({ account: accounts[0], error: null });
       } catch (err) {
         setState({ account: null, error: 'Error connecting to MetaMask' });
-        console.error(err);
+        console.log(err);
       }
     } else {
       setState({ account: null, error: 'MetaMask is not installed' });
