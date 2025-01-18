@@ -29,11 +29,25 @@ const ConnectWalletButton: React.FC = () => {
   };
 
   return (
-    <div>
-      <button onClick={connectWallet}>
-        {state.account ? `Connected: ${state.account}` : 'Connect to MetaMask'}
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px' }}>
+      <button 
+      onClick={connectWallet} 
+      style={{ 
+        padding: '10px 20px', 
+        fontSize: '16px', 
+        cursor: 'pointer', 
+        backgroundColor: '#007bff', 
+        color: '#fff', 
+        border: 'none', 
+        borderRadius: '5px',
+        transition: 'background-color 0.3s ease'
+      }}
+      onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#0056b3')}
+      onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#007bff')}
+      >
+      {state.account ? `Connected: ${state.account}` : 'Connect to MetaMask'}
       </button>
-      {state.error && <p style={{ color: 'red' }}>{state.error}</p>}
+      {state.error && <p style={{ color: 'red', marginTop: '10px' }}>{state.error}</p>}
     </div>
   );
 };
