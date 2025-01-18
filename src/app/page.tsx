@@ -10,7 +10,6 @@ export default function Home() {
   const [theme, setTheme] = useState("light");
   const [isAnimating, setIsAnimating] = useState(false); // Controls sheet visibility
   const [overlayColor, setOverlayColor] = useState("#121212"); // Default dark theme overlay
-  const [scrollY, setScrollY] = useState(0);
 
   // Load the initial theme from localStorage
   useEffect(() => {
@@ -38,17 +37,6 @@ export default function Home() {
       setIsAnimating(false); // End the animation
     }, 1000); // Match the animation duration
   };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <div className={`relative overflow-hidden ${theme === "dark" ? "dark" : ""}`}>
