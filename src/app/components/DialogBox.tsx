@@ -54,7 +54,7 @@ const DialogBox: React.FC<DialogBoxProps> = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
 
     return (
-        <div className="dialog-overlay" onClick={onClose}>
+        <div className="dialog-overlay text-[#121212]" onClick={onClose}>
             <div className="dialog-box" onClick={(e) => e.stopPropagation()}>
                 <h2 className="dialog-header">Add Subscription</h2>
                 <label className="dialog-input-label">

@@ -25,45 +25,45 @@ body {
 }
 
 .dialog-overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: rgba(0, 0, 0, 0.5);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
-.dialog-input-label{
+.dialog-input-label {
   margin-top: 10px;
   margin-top: 10px;
 }
 
-.in-wei-label{
+.in-wei-label {
   align-self: flex-end;
 }
 
 .dialog-box {
-	background-color: white;
-	border-radius: 10px;
-	padding: 20px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-	width: 600px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 600px;
   height: 400px;
-  display:flex;
+  display: flex;
   flex-direction: column;
   z-index: 1001;
 }
 
 .dialog-header {
-	font-size: 18px;
-	margin-bottom: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
-.dialog-input{
+.dialog-input {
   width: 60%;
   margin-left: 10px;
   margin-right: 10px;
@@ -74,19 +74,19 @@ body {
 }
 
 .dialog-body {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .dialog-footer {
-	display: flex;
-	justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .button {
-	margin-left: 10px;
+  margin-left: 10px;
 }
 
-.button-container{
+.button-container {
   margin-top: 70px;
   display: flex;
   justify-content: center;
@@ -94,7 +94,7 @@ body {
   gap: 15px;
 }
 
-.dialog-button{
+.dialog-button {
   background-color: #121212;
   color: #fff;
   border-radius: 5px;
