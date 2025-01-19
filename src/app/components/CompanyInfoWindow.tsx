@@ -11,6 +11,7 @@ interface CompanyInfoWindowProps {
   subscriber: string;
   beneficiary: string;
   interval:string;
+  nextPayment: string;
   onToggle: () => void;
 }
 
@@ -24,6 +25,7 @@ const CompanyInfoWindow: React.FC<CompanyInfoWindowProps> = ({
   subscriber,
   beneficiary,
   interval,
+  nextPayment,
   onToggle,
 }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -78,6 +80,9 @@ const CompanyInfoWindow: React.FC<CompanyInfoWindowProps> = ({
         <div style={{ padding: "20px" }}>
           <p>
             Since: {since} | Total Spent: {totalSpent} {inUsd ? "USD" : "Other Currency"}
+          </p>
+          <p>
+            Interval: {interval} | Next Payment: {nextPayment}
           </p>
           <p style={{ fontSize: "12px", color: "gray" }}>Subscriber: {subscriber}</p>
           <p style={{ fontSize: "12px", color: "gray" }}>Beneficiary: {beneficiary}</p>

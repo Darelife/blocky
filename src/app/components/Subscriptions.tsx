@@ -20,6 +20,7 @@ export default function Subscriptions() {
           subscriber={subscription.subscriber}
           beneficiary={subscription.beneficiary}
           interval={subscription.Interval}
+          nextPayment={subscription.NextPayment}
           inUsd={true}
           col1="#121212"
           isActive={activeCompany === subscription.companyName}
