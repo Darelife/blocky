@@ -38,7 +38,7 @@ const DialogBox: React.FC<DialogBoxProps> = ({ isOpen, onClose }) => {
             const contract = new ethers.Contract(CONTRACT_ADDRESS, SubscriptionManagerABI, signer);
 
             // TODO: Fix the function signature
-            const tx = await contract.createSubscription(beneficiary, cost, interval);
+            const tx = await contract.createSubscription(beneficiary, ethers.utils.parseUnits(cost, 'wei'), interval);
             await tx.wait();
             alert('Subscription created');
             onClose();

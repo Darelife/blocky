@@ -7,7 +7,7 @@ const AddButton: React.FC = () => {
 
     return (
         <div>
-            <button className="add-button" onClick={() => setIsDialogOpen(true)}>+</button>
+            <button className="add-button" style={{border: '1px solid #fff',}} onClick={() => setIsDialogOpen(true)}>+</button>
             {isDialogOpen && (
                 <DialogBox
                     isOpen={isDialogOpen}

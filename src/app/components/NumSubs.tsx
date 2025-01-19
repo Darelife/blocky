@@ -12,6 +12,7 @@ const NumSubs: React.FC<NumSubsProps> = ({ initialCount }) => {
       style = {{
         margin: "auto",
         borderRadius: '10px',
+        border: '1px solid #fff',
       }}
     >
       <p className="text-4xl font-bold mb-2">Subscriptions</p>
