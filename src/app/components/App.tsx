@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { AddButton, DialogBox } from './components';
+import AddButton from './AddButton';
+import DialogBox from './DialogBox';
 
 const App: React.FC = () => {
     const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -16,7 +17,7 @@ const App: React.FC = () => {
         <div className="App">
             <h1>Subscription Manager</h1>
             <AddButton onClick={handleAddButtonClick} />
-            {isDialogOpen && <DialogBox onClose={closeDialog} />}
+            <DialogBox isOpen={isDialogOpen} onClose={closeDialog} />
         </div>
     );
 };

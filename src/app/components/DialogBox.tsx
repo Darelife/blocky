@@ -2,7 +2,7 @@
 import React from 'react';
 import { ethers, providers, utils } from 'ethers';
 import { CONTRACT_ADDRESS } from '../constants';
-import SubscriptionManagerABI from './SubscriptionManager.json';
+import SubscriptionManagerABI from './SubscriptionManagerABI.json';
 
 interface DialogBoxProps {
     isOpen: boolean;
@@ -14,7 +14,7 @@ const DialogBox: React.FC<DialogBoxProps> = ({ isOpen, onClose }) => {
     const [cost, setCost] = React.useState('');
     const [website, setWebsite] = React.useState('');
     const [beneficiary, setBeneficiary] = React.useState('');
-    const [interval, setInterval] = React.useState('');
+    const [interval, setInterval] = React.useState<number | null>(null);
 
     const handleSubmit = async () => {
         if(!window.ethereum) {
@@ -22,7 +22,7 @@ const DialogBox: React.FC<DialogBoxProps> = ({ isOpen, onClose }) => {
             return;
         }
 
-        if(!name || !cost || !website || !beneficiary || !interval) {
+        if(!name || !cost || !website || !beneficiary || interval === null) {
             alert('Please fill out all fields');
             return;
         }
@@ -35,7 +35,7 @@ const DialogBox: React.FC<DialogBoxProps> = ({ isOpen, onClose }) => {
             const provider = new providers.Web3Provider(window.ethereum);
             const signer = provider.getSigner();
             console.log(CONTRACT_ADDRESS);
-            const contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
+            const contract = new ethers.Contract(CONTRACT_ADDRESS, SubscriptionManagerABI, signer);
 
             // TODO: Fix the function signature
             const tx = await contract.createSubscription(beneficiary, cost, interval);
