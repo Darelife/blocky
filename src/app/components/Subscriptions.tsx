@@ -7,6 +7,7 @@ export default function Subscriptions() {
 
   const handleToggle = (companyName: string) => {
     setActiveCompany(activeCompany === companyName ? null : companyName);
+    
   };
 
   return (

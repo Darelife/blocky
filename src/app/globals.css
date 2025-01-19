@@ -2,25 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --element-width: 250px;
+  --element-height: 250px;
+  --border-radius: 10px;
+}
+
 html,
 body {
   overscroll-behavior: none;
 }
 
+.company-window{
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: black;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: height 0.3s ease;
+  overflow: hidden;
+}
+
+.company-header{
+  display: flex;
+  align-items: center;
+  background-color: #121212;
+  color: white;
+  padding: 1rem;
+  cursor: pointer;
+}
+
 .add-button {
   background-color: black;
   color: white;
-  border-radius: 10px;
-  width: 160px;
-  height: 160px;
+  border-radius: var(--border-radius);
+  width: var(--element-width);
+  height: var(--element-height);
   position: relative;
   margin: auto;
-  font-size: 200px;
+  font-size: 250px;
   font-weight: 100; /* Make the + not thick */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+body.dark .dialog-overlay {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .dialog-overlay {
@@ -43,6 +74,11 @@ body {
 
 .in-wei-label {
   align-self: flex-end;
+}
+
+body.dark .dialog-box {
+  background-color: #121212;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
 }
 
 .dialog-box {
@@ -198,3 +234,40 @@ body {
   background-color: var(--background);
   color: var(--foreground);
 }
+
+.num-subs{
+  background-color: black;
+  color: white;
+  width: var(--element-width);
+  height: var(--element-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  margin: auto;
+  border: 1px solid #fff;
+}
+
+body.dark .num-subs, body.dark .monthly-cost, body.dark .add-button{
+  background-color: white;
+  color: black;
+}
+
+.monthly-cost{
+  background-color: black;
+  color: white;
+  width: var(--element-width);
+  height: var(--element-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  padding: 1rem;
+  margin: auto;
+  border: 1px solid #fff;
+}
+

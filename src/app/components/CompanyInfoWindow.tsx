@@ -58,31 +58,9 @@ const CompanyInfoWindow: React.FC<CompanyInfoWindowProps> = ({
   const logoUrl = `https://logo.clearbit.com/${domain}`;
 
   return (
-    <div
-      style={{
-        position: "relative",
-        bottom: "0",
-        width: "100%",
-        backgroundColor: isDarkMode ? "#333" : "white",
-        color: isDarkMode ? "white" : "black",
-        borderTop: isDarkMode ? "1px solid #555" : "1px solid #ccc",
-        boxShadow: "0 -4px 8px rgba(0, 0, 0, 0.2)",
-        zIndex: 1000,
-        transition: "height 0.3s ease",
-        overflow: "hidden",
-      }}
-    >
-      <div
+    <div className="company-window">
+      <div className="company-header"
         onClick={onToggle}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          backgroundColor: col1,
-          color: "white",
-          padding: "10px",
-          cursor: "pointer",
-        }}
       >
         <div style={{ display: "flex", alignItems: "center" }}>
           <Image src={logoUrl} alt={`${companyName} logo`} width={50} height={50} />
