@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import NavBar from "./components/navBar";
+import AddButton from "./components/addButton";
 // import Functionality from "./components/functionality";
 // import FadingText from "./components/fadingText";
 // import ConnectWalletButton from "./components/metaaaa";
@@ -52,6 +53,7 @@ export default function Home() {
         <h1 className="md:text-9xl text-6xl font-sans font-black">BLOCKY</h1>
       </div>
       {/* <Functionality /> */}
+      <AddButton />
     </div>
   );
 }
