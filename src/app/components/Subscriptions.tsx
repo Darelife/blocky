@@ -10,7 +10,7 @@ export default function Subscriptions() {
 
   return (
     <div style={{ borderRadius: '10px', overflow: 'hidden', width: "25rem", margin: "0 auto", border: "1px solid #ccc", boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)" }}>
-      {["Netflix", "Amazon", "Google", "Mozilla", "Apple", "Spotify"].map((company) => (
+      {["Netflix", "Amazon", "Google", "Mozilla"].map((company) => (
         <CompanyInfoWindow
           key={company}
           companyName={company}
