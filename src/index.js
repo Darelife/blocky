@@ -3,7 +3,7 @@ import contractABI from "./app/components/SubscriptionManagerABI.json";
 let Web3 = new Web3(window.ethereum);
 const contractAddress = "0x750F160C5187e77A1E79C04Df9bF97b7E898aA62"; //Replace when deployed
 let contract = new web3.eth.Contract(contractABI, contractAddress);
-const SubscriptionManagerArtifact = require("./build/contracts/SubscriptionManager.json");
+import SubscriptionManagerArtifact from "./build/contracts/SubscriptionManager.json";
 
 // Connect to the Ethereum network
 
