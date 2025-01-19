@@ -2,13 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import NavBar from "../components/navBar";
-import AddButton from "../components/AddButton";
-// import Functionality from "./components/functionality";
-import Dashboard from "../components/DashBoard";
-// import Dashboard from "./components/dashboard";
-// import PlusButton from "./components/PlusButton";
-// import FadingText from "./components/fadingText";
-// import ConnectWalletButton from "./components/metaaaa";
 
 export default function Home() {
     const [theme, setTheme] = useState("light");
@@ -68,35 +61,40 @@ export default function Home() {
 
             <NavBar toggleTheme={toggleTheme} />
             <div
-    className="flex flex-col justify-center items-center min-h-screen px-8"
-    style={{ transform: `translate(${transform.x}px, ${transform.y}px)` }}
->
-    <h1 className="md:text-9xl text-6xl font-sans font-black">Welcome to Blocky</h1>
-    <div className="mt-16 text-2xl font-sans">
-    Welcome to *Blocky*, your ultimate blockchain-powered platform for seamless subscription management. We’re here to simplify your subscription experience by combining the power of blockchain technology with user-friendly functionality.  
+                className="flex flex-col justify-center items-center min-h-screen px-[11rem] text-center"
+                style={{ transform: `translate(${transform.x}px, ${transform.y}px)` }}
+            >
+                <h1 className="md:text-9xl text-6xl font-sans font-black mt-[7rem] mb-[2rem]">Welcome to Blocky</h1>
+                <div className="mt-16 text-2xl font-sans">
+                    <em>Blocky</em>, your ultimate blockchain-powered platform for seamless subscription management. We’re here to simplify your subscription experience by combining the power of blockchain technology with user-friendly functionality.  
 
-### Who We Are  
-At Blocky, we believe in empowering you to take full control of your subscriptions. Say goodbye to juggling multiple platforms, missed renewals, or complicated payment processes. Our mission is to make managing your subscriptions effortless, transparent, and secure.  
+                    <h2 className="text-3xl font-bold mt-8">Who We Are</h2>
+                    <p className="mt-4">At Blocky, we believe in empowering you to take full control of your subscriptions. Say goodbye to juggling multiple platforms, missed renewals, or complicated payment processes. Our mission is to make managing your subscriptions effortless, transparent, and secure.</p>
 
-### What We Do  
-Blocky serves as the central hub for all your subscription needs. Here’s how we help:  
-- *Unified Subscription Dashboard*: Easily track and manage all your subscriptions in one place, from entertainment services to productivity tools.  
-- *Blockchain-Powered Security*: Enjoy the benefits of decentralized technology, ensuring that your data and payments are secure and tamper-proof.  
-- *Metamask Integration*: Make payments directly through your Metamask wallet, offering a fast, secure, and crypto-enabled way to handle your transactions.  
-- *Smart Notifications*: Stay on top of upcoming renewals and never miss a payment with timely alerts and reminders.  
+                    <h2 className="text-3xl font-bold mt-8">What We Do</h2>
+                    <p className="mt-4">Blocky serves as the central hub for all your subscription needs. Here’s how we help:</p>
+                    <ul className="list-disc list-inside mt-4">
+                        <li><em>Unified Subscription Dashboard</em>: Easily track and manage all your subscriptions in one place, from entertainment services to productivity tools.</li>
+                        <li><em>Blockchain-Powered Security</em>: Enjoy the benefits of decentralized technology, ensuring that your data and payments are secure and tamper-proof.</li>
+                        <li><em>Metamask Integration</em>: Make payments directly through your Metamask wallet, offering a fast, secure, and crypto-enabled way to handle your transactions.</li>
+                        <li><em>Smart Notifications</em>: Stay on top of upcoming renewals and never miss a payment with timely alerts and reminders.</li>
+                    </ul>
 
-### Why Choose Blocky?  
-- *Simplified Management*: A single platform for organizing all your subscriptions.  
-- *Next-Level Security*: Powered by blockchain to protect your data and transactions.  
-- *Crypto-Friendly Payments*: Use your Metamask wallet for smooth, decentralized transactions.  
-- *Transparent and Reliable*: Say goodbye to hidden fees or surprises – you’re always in control.  
+                    <h2 className="text-3xl font-bold mt-8">Why Choose Blocky?</h2>
+                    <ul className="list-disc list-inside mt-4">
+                        <li><em>Simplified Management</em>: A single platform for organizing all your subscriptions.</li>
+                        <li><em>Next-Level Security</em>: Powered by blockchain to protect your data and transactions.</li>
+                        <li><em>Crypto-Friendly Payments</em>: Use your Metamask wallet for smooth, decentralized transactions.</li>
+                        <li><em>Transparent and Reliable</em>: Say goodbye to hidden fees or surprises – you’re always in control.</li>
+                    </ul>
 
-### Join the Future of Subscription Management  
-Blocky is more than just a tool – it’s a solution designed to give you peace of mind and complete control over your subscriptions. Simplify your life with the power of blockchain technology.  
+                    <h2 className="text-3xl font-bold mt-8">Join the Future of Subscription Management</h2>
+                    <p className="mt-4">Blocky is more than just a tool – it’s a solution designed to give you peace of mind and complete control over your subscriptions. Simplify your life with the power of blockchain technology.</p>
 
-*Manage smarter. Pay securely. Subscribe effortlessly – with Blocky.*
-    </div>
-</div>
+                    <em>Manage smarter. Pay securely. Subscribe effortlessly – with Blocky.</em>
+
+                </div>
+            </div>
             {/* <Functionality /> */}
             {/* <AddButton /> */}
             {/* <Dashboard /> */}
