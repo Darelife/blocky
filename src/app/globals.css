@@ -13,9 +13,8 @@ body {
   border-radius: 10px;
   width: 160px;
   height: 160px;
-  position: absolute;
-  top: 150px;
-  left: 70px;
+  position: relative;
+  margin: auto;
   font-size: 200px;
   font-weight: 100; /* Make the + not thick */
   display: flex;

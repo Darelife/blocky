@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import DialogBox from './DialogBox';
 
-
 const AddButton: React.FC = () => {
     const [isDialogOpen, setIsDialogOpen] = useState(false);
 
     return (
-        <div>
-            <button className="add-button" style={{border: '1px solid #fff',}} onClick={() => setIsDialogOpen(true)}>+</button>
+        <div className="add-button-container">
+            <button className="add-button" onClick={() => setIsDialogOpen(true)}>+</button>
             {isDialogOpen && (
                 <DialogBox
                     isOpen={isDialogOpen}

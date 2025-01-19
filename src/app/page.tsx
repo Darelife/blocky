@@ -74,7 +74,7 @@ export default function Home() {
         <h1 className="md:text-9xl text-6xl font-sans font-black">BLOCKY</h1>
       </div>
       {/* <Functionality /> */}
-      <AddButton />
+      {/* <AddButton /> */}
       {/* <Dashboard /> */}
       {/* <PlusButton onClick={() => console.log("Clicked")} /> */}
       {/* <Subscriptions /> */}
