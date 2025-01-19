@@ -6,7 +6,7 @@ export default function Left() {
     <div className="left-container" style={{margin:"auto"}}>
       <AddButton />
       <div className="mb-7"></div>
-      <NumSubs initialCount={4} />
+      <NumSubs initialCount={8} />
     </div>
   );
 }
