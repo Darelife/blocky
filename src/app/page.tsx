@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import NavBar from "./components/navBar";
+import Subscriptions from "./components/Subscriptions";
 // import Dashboard from "./components/dashboard";
-import PlusButton from "./components/PlusButton";
-import CompanyInfoWindow from "./components/CompanyInfoWindow";
+// import PlusButton from "./components/PlusButton";
 // import FadingText from "./components/fadingText";
 // import ConnectWalletButton from "./components/metaaaa";
 
@@ -54,8 +54,11 @@ export default function Home() {
         <h1 className="md:text-9xl text-6xl font-sans font-black">BLOCKY</h1>
       </div>
       {/* <Dashboard /> */}
-      <PlusButton onClick={() => console.log("Clicked")} />
-      <CompanyInfoWindow companyName="Netflix" since="1997" totalSpent={1000000} inUsd={true} onClose={() => console.log("Closed")} />
+      {/* <PlusButton onClick={() => console.log("Clicked")} /> */}
+      <Subscriptions />
+      <div className="mb-[125px]">
+
+      </div>
     </div>
   );
 }

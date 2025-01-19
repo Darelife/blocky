@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
 interface CompanyInfoWindowProps {
@@ -6,7 +6,9 @@ interface CompanyInfoWindowProps {
   since: string;
   totalSpent: number;
   inUsd: boolean;
-  onClose: () => void;
+  col1: string;
+  isActive: boolean;
+  onToggle: () => void;
 }
 
 const CompanyInfoWindow: React.FC<CompanyInfoWindowProps> = ({
@@ -14,9 +16,12 @@ const CompanyInfoWindow: React.FC<CompanyInfoWindowProps> = ({
   since,
   totalSpent,
   inUsd,
+  col1,
+  isActive,
+  onToggle,
 }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (typeof document !== "undefined") {
@@ -27,10 +32,6 @@ const CompanyInfoWindow: React.FC<CompanyInfoWindowProps> = ({
   const domain = `${companyName.toLowerCase().replace(/\s+/g, "")}.com`;
   const logoUrl = `https://logo.clearbit.com/${domain}`;
 
-  const toggleCollapse = () => {
-    setIsCollapsed(!isCollapsed);
-  };
-
   return (
     <div
       style={{
@@ -40,35 +41,41 @@ const CompanyInfoWindow: React.FC<CompanyInfoWindowProps> = ({
         backgroundColor: isDarkMode ? "#333" : "white",
         color: isDarkMode ? "white" : "black",
         borderTop: isDarkMode ? "1px solid #555" : "1px solid #ccc",
-        borderRadius: "8px 8px 0 0",
         boxShadow: "0 -4px 8px rgba(0, 0, 0, 0.2)",
         zIndex: 1000,
+        transition: "height 0.3s ease",
+        overflow: "hidden",
       }}
     >
-
       <div
-        onClick={toggleCollapse}
+        onClick={onToggle}
         style={{
           display: "flex",
           alignItems: "center",
-          backgroundColor: "gray",
+          backgroundColor: col1,
+          color: "white",
           padding: "10px",
           cursor: "pointer",
-          borderTopLeftRadius: "8px",
-          borderTopRightRadius: "8px",
         }}
       >
         <Image src={logoUrl} alt={`${companyName} logo`} width={50} height={50} />
         <h2 style={{ marginLeft: "10px" }}>{companyName}</h2>
       </div>
-      {!isCollapsed && (
+      <div
+        ref={contentRef}
+        style={{
+          height: isActive ? `${contentRef.current?.scrollHeight}px` : "0px",
+          transition: "height 0.3s ease",
+          overflow: "hidden",
+        }}
+      >
         <div style={{ padding: "20px" }}>
           <p>Since: {since}</p>
           <p>
             Total Spent: {totalSpent} {inUsd ? "USD" : "Other Currency"}
           </p>
         </div>
-      )}
+      </div>
     </div>
   );
 };
