@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import NavBar from "./components/navBar";
 import AddButton from "./components/AddButton";
 // import Functionality from "./components/functionality";
-import Subscriptions from "./components/Subscriptions";
+import Dashboard from "./components/DashBoard";
 // import Dashboard from "./components/dashboard";
 // import PlusButton from "./components/PlusButton";
 // import FadingText from "./components/fadingText";
@@ -77,7 +77,8 @@ export default function Home() {
       <AddButton />
       {/* <Dashboard /> */}
       {/* <PlusButton onClick={() => console.log("Clicked")} /> */}
-      <Subscriptions />
+      {/* <Subscriptions /> */}
+      <Dashboard />
       <div className="mb-[125px]">
       </div>
     </div>
