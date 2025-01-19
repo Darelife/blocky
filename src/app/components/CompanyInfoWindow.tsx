@@ -8,7 +8,6 @@ interface CompanyInfoWindowProps {
   inUsd: boolean;
   col1: string;
   isActive: boolean;
-  subscriber: string;
   beneficiary: string;
   interval:string;
   nextPayment: string;
@@ -22,7 +21,6 @@ const CompanyInfoWindow: React.FC<CompanyInfoWindowProps> = ({
   inUsd,
   col1,
   isActive,
-  subscriber,
   beneficiary,
   interval,
   nextPayment,
@@ -84,7 +82,6 @@ const CompanyInfoWindow: React.FC<CompanyInfoWindowProps> = ({
           <p>
             Interval: {interval} | Next Payment: {nextPayment}
           </p>
-          <p style={{ fontSize: "12px", color: "gray" }}>Subscriber: {subscriber}</p>
           <p style={{ fontSize: "12px", color: "gray" }}>Beneficiary: {beneficiary}</p>
         </div>
       </div>
