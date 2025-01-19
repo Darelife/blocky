@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import DialogBox from './DialogBox';
-import '../AddButton.css';
 
 
 const AddButton: React.FC = () => {

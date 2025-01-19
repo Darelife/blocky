@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import NavBar from "./components/navBar";
-import AddButton from "./components/addButton";
+import AddButton from "./components/AddButton";
 // import Functionality from "./components/functionality";
 import Subscriptions from "./components/Subscriptions";
 // import Dashboard from "./components/dashboard";
