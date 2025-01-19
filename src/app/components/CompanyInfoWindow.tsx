@@ -62,12 +62,14 @@ const CompanyInfoWindow: React.FC<CompanyInfoWindowProps> = ({
       <div className="company-header"
         onClick={onToggle}
       >
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <Image src={logoUrl} alt={`${companyName} logo`} width={50} height={50} />
-          <h2 style={{ marginLeft: "10px" }}>{companyName}</h2>
-        </div>
-        <div>
-          <h2>{amount} {inUsd ? "USD" : "Other Currency"}</h2>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%" }}>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <Image src={logoUrl} alt={`${companyName} logo`} width={50} height={50} />
+            <h2 style={{ marginLeft: "10px" }}>{companyName}</h2>
+          </div>
+          <div>
+            <h2>{amount} {inUsd ? "USD" : "Other Currency"}</h2>
+          </div>
         </div>
       </div>
       <div
