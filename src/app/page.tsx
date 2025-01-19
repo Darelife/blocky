@@ -12,6 +12,7 @@ export default function Home() {
   const [theme, setTheme] = useState("light");
   const [isAnimating, setIsAnimating] = useState(false); // Controls sheet visibility
   const [overlayColor, setOverlayColor] = useState("#121212"); // Default dark theme overlay
+  const [transform, setTransform] = useState({ x: 0, y: 0 })
 
   // Load the initial theme from localStorage
   useEffect(() => {
@@ -39,6 +40,20 @@ export default function Home() {
       setIsAnimating(false); // End the animation
     }, 1000); // Match the animation duration
   };
+ useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      const { clientX, clientY } = event;
+      const { innerWidth, innerHeight } = window;
+      const offsetX = (clientX / innerWidth - 0.5) * -20;
+      const offsetY = (clientY / innerHeight - 0.5) * -20;
+      setTransform({ x: offsetX, y: offsetY });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
 
   return (
     <div className={`relative overflow-hidden ${theme === "dark" ? "dark" : ""}`}>
@@ -50,7 +65,10 @@ export default function Home() {
       )}
 
       <NavBar toggleTheme={toggleTheme} />
-      <div className="flex justify-center items-center min-h-screen">
+      <div
+        className="flex justify-center items-center min-h-screen"
+        style={{ transform: `translate(${transform.x}px, ${transform.y}px)` }}
+      >
         <h1 className="md:text-9xl text-6xl font-sans font-black">BLOCKY</h1>
       </div>
       {/* <Dashboard /> */}
