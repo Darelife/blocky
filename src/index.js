@@ -1,7 +1,8 @@
 import contractABI from "./app/components/SubscriptionManagerABI.json";
+import {CONTRACT_ADDRESS} from "./app/constants.ts";
 
 let Web3 = new Web3(window.ethereum);
-const contractAddress = "0x750F160C5187e77A1E79C04Df9bF97b7E898aA62"; //Replace when deployed
+const contractAddress = CONTRACT_ADDRESS; //Replace when deployed
 let contract = new web3.eth.Contract(contractABI, contractAddress);
 import SubscriptionManagerArtifact from "./build/contracts/SubscriptionManager.json";
 
