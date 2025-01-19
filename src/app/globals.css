@@ -13,7 +13,7 @@ body {
   overscroll-behavior: none;
 }
 
-.company-window{
+.company-window {
   position: relative;
   bottom: 0;
   width: 100%;
@@ -25,7 +25,7 @@ body {
   overflow: hidden;
 }
 
-.company-header{
+.company-header {
   display: flex;
   align-items: center;
   background-color: #121212;
@@ -77,7 +77,7 @@ body.dark .dialog-overlay {
 }
 
 body.dark .dialog-box {
-  background-color: #121212;
+  /* background-color: #121212; */
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
 }
 
@@ -235,7 +235,7 @@ body {
   color: var(--foreground);
 }
 
-.num-subs{
+.num-subs {
   background-color: black;
   color: white;
   width: var(--element-width);
@@ -250,12 +250,14 @@ body {
   border: 1px solid #fff;
 }
 
-body.dark .num-subs, body.dark .monthly-cost, body.dark .add-button{
+body.dark .num-subs,
+body.dark .monthly-cost,
+body.dark .add-button {
   background-color: white;
   color: black;
 }
 
-.monthly-cost{
+.monthly-cost {
   background-color: black;
   color: white;
   width: var(--element-width);
@@ -270,4 +272,3 @@ body.dark .num-subs, body.dark .monthly-cost, body.dark .add-button{
   margin: auto;
   border: 1px solid #fff;
 }
-
