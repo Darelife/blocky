@@ -7,6 +7,9 @@ contract SubscriptionManager{
     struct Subscription {
         address subscriber;
         address beneficiary;
+        string companyName;
+        string domainName;
+        uint256 dateSince;
         uint256 amount; // Payment amount
         uint256 interval; // Time between payments in seconds
         uint256 nextPayment; // Timestamp of the next payment
@@ -20,6 +23,9 @@ contract SubscriptionManager{
         uint256 indexed subscriptionId,
         address indexed subscriber,
         address indexed beneficiary,
+        string companyName,
+        string domainName,
+        uint256 dateSince,
         uint256 amount,
         uint256 interval
     );
@@ -33,24 +39,29 @@ contract SubscriptionManager{
      * @param _amount Amount to be paid per interval.
      * @param _interval Time interval between payments in seconds.
      */
-    function createSubscription(address _beneficiary, uint256 _amount, uint256 _interval) external payable {
+    function createSubscription(address _beneficiary, string memory _companyName, string memory _domainName, uint256 _amount, uint256 _interval) external payable {
         require(_amount > 0, "Amount must be greater than zero");
         require(_interval > 0, "Interval must be greater than zero");
         require(msg.value >= _amount, "Initial payment required");
+
+        uint256 time = block.timestamp;
 
         subscriptionCount++;
         subscriptions[subscriptionCount] = Subscription({
             subscriber: msg.sender,
             beneficiary: _beneficiary,
+            companyName: _companyName,
+            domainName: _domainName,
+            dateSince: time,
             amount: _amount,
             interval: _interval,
-            nextPayment: block.timestamp + _interval,
+            nextPayment: time + _interval,
             active: true
         });
 
         // Transfer the initial payment
         payable(_beneficiary).transfer(_amount);
-        emit SubscriptionCreated(subscriptionCount, msg.sender, _beneficiary, _amount, _interval);
+        emit SubscriptionCreated(subscriptionCount, msg.sender, _beneficiary, _companyName, _domainName, time, _amount, _interval);
     }
 
     /**
@@ -114,6 +125,14 @@ contract SubscriptionManager{
             subscription.nextPayment,
             subscription.active
         );
+    }
+
+    function getAllSubscriptions() external view returns (Subscription[] memory) {
+        Subscription[] memory allSubscriptions = new Subscription[](subscriptionCount);
+        for (uint256 i = 1; i <= subscriptionCount; i++) {
+            allSubscriptions[i - 1] = subscriptions[i];
+        }
+        return allSubscriptions;
     }
     
 }
