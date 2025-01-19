@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import NavBar from "./components/navBar";
+import AddButton from "./components/addButton";
+// import Functionality from "./components/functionality";
 import Subscriptions from "./components/Subscriptions";
 // import Dashboard from "./components/dashboard";
 // import PlusButton from "./components/PlusButton";
@@ -71,11 +73,12 @@ export default function Home() {
       >
         <h1 className="md:text-9xl text-6xl font-sans font-black">BLOCKY</h1>
       </div>
+      {/* <Functionality /> */}
+      <AddButton />
       {/* <Dashboard /> */}
       {/* <PlusButton onClick={() => console.log("Clicked")} /> */}
       <Subscriptions />
       <div className="mb-[125px]">
-
       </div>
     </div>
   );
