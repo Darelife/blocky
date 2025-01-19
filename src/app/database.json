@@ -8,7 +8,7 @@
     "dateSince":"2025-01-01",
     "Interval":"Monthly",
     "Amount":10,
-    "NextPayment":"2025-02-01",
+    "NextPayment":"2025-03-01",
     "Active":"true"
   },
   {
@@ -20,7 +20,7 @@
     "dateSince":"2025-01-01",
     "Interval":"Monthly",
     "Amount":10,
-    "NextPayment":"2025-02-01",
+    "NextPayment":"2025-03-01",
     "Active":"true"
   },
   {
@@ -32,7 +32,7 @@
     "dateSince":"2025-01-01",
     "Interval":"Monthly",
     "Amount":10,
-    "NextPayment":"2025-02-01",
+    "NextPayment":"2025-03-01",
     "Active":"true"
   },
   {
@@ -44,7 +44,7 @@
     "dateSince":"2025-01-01",
     "Interval":"Monthly",
     "Amount":10,
-    "NextPayment":"2025-02-01",
+    "NextPayment":"2025-03-01",
     "Active":"true"
   },
   {
@@ -56,7 +56,7 @@
     "dateSince":"2025-01-01",
     "Interval":"Monthly",
     "Amount":10,
-    "NextPayment":"2025-02-01",
+    "NextPayment":"2025-03-01",
     "Active":"true"
   },
   {
@@ -68,7 +68,7 @@
     "dateSince":"2025-01-01",
     "Interval":"Monthly",
     "Amount":10,
-    "NextPayment":"2025-02-01",
+    "NextPayment":"2025-03-01",
     "Active":"true"
   },
   {
@@ -80,7 +80,7 @@
     "dateSince":"2025-01-01",
     "Interval":"Monthly",
     "Amount":10,
-    "NextPayment":"2025-02-01",
+    "NextPayment":"2025-03-01",
     "Active":"true"
   },
   {
@@ -92,7 +92,7 @@
     "dateSince":"2025-01-01",
     "Interval":"Monthly",
     "Amount":10,
-    "NextPayment":"2025-02-01",
+    "NextPayment":"2025-03-01",
     "Active":"true"
   }
   

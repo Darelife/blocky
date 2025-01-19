@@ -4,26 +4,26 @@ import Image from "next/image";
 interface CompanyInfoWindowProps {
   companyName: string;
   since: string;
-  totalSpent: number;
+  amount: number;
   inUsd: boolean;
   col1: string;
   isActive: boolean;
-  subscriber: string;
   beneficiary: string;
-  interval:string;
+  interval: string;
+  nextPayment: string;
   onToggle: () => void;
 }
 
 const CompanyInfoWindow: React.FC<CompanyInfoWindowProps> = ({
   companyName,
   since,
-  totalSpent,
+  amount,
   inUsd,
   col1,
   isActive,
-  subscriber,
   beneficiary,
   interval,
+  nextPayment,
   onToggle,
 }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -34,6 +34,25 @@ const CompanyInfoWindow: React.FC<CompanyInfoWindowProps> = ({
       setIsDarkMode(document.body.classList.contains("dark"));
     }
   }, []);
+
+  // since : 2025-01-01
+  // nextPayment : 2025-02-01
+  let totalSpent = 0;
+  if (interval === "Monthly") {
+    // const months = Math.floor((new Date().getTime() - new Date(since).getTime()) / (1000 * 60 * 60 * 24 * 30))+2;
+    // totalSpent = months * amount;
+    const sinceSplit = since.split('-');
+    const nextPaymentSplit = nextPayment.split('-');
+    const months = (parseInt(nextPaymentSplit[0]) - parseInt(sinceSplit[0])) * 12 + (parseInt(nextPaymentSplit[1]) - parseInt(sinceSplit[1]));
+    totalSpent = months * amount;
+  } else {
+    // const years = Math.floor((new Date().getTime() - new Date(since).getTime()) / (1000 * 60 * 60 * 24 * 365))+2;
+    // totalSpent = years * amount;
+    const sinceSplit = since.split('-');
+    const nextPaymentSplit = nextPayment.split('-');
+    const years = (parseInt(nextPaymentSplit[0]) - parseInt(sinceSplit[0]));
+    totalSpent = years * amount;
+  }
 
   const domain = `${companyName.toLowerCase().replace(/\s+/g, "")}.com`;
   const logoUrl = `https://logo.clearbit.com/${domain}`;
@@ -58,14 +77,20 @@ const CompanyInfoWindow: React.FC<CompanyInfoWindowProps> = ({
         style={{
           display: "flex",
           alignItems: "center",
+          justifyContent: "space-between",
           backgroundColor: col1,
           color: "white",
           padding: "10px",
           cursor: "pointer",
         }}
       >
-        <Image src={logoUrl} alt={`${companyName} logo`} width={50} height={50} />
-        <h2 style={{ marginLeft: "10px" }}>{companyName}</h2>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <Image src={logoUrl} alt={`${companyName} logo`} width={50} height={50} />
+          <h2 style={{ marginLeft: "10px" }}>{companyName}</h2>
+        </div>
+        <div>
+          <h2>{amount} {inUsd ? "USD" : "Other Currency"}</h2>
+        </div>
       </div>
       <div
         ref={contentRef}
@@ -79,7 +104,9 @@ const CompanyInfoWindow: React.FC<CompanyInfoWindowProps> = ({
           <p>
             Since: {since} | Total Spent: {totalSpent} {inUsd ? "USD" : "Other Currency"}
           </p>
-          <p style={{ fontSize: "12px", color: "gray" }}>Subscriber: {subscriber}</p>
+          <p>
+            Interval: {interval} | Next Payment: {nextPayment}
+          </p>
           <p style={{ fontSize: "12px", color: "gray" }}>Beneficiary: {beneficiary}</p>
         </div>
       </div>

@@ -16,10 +16,10 @@ export default function Subscriptions() {
           key={subscription.id}
           companyName={subscription.companyName}
           since={subscription.dateSince}
-          totalSpent={subscription.Amount}
-          subscriber={subscription.subscriber}
+          amount={subscription.Amount}
           beneficiary={subscription.beneficiary}
           interval={subscription.Interval}
+          nextPayment={subscription.NextPayment}
           inUsd={true}
           col1="#121212"
           isActive={activeCompany === subscription.companyName}
