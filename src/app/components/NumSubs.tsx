@@ -1,11 +1,10 @@
 import React, { useState } from "react";
+import database from "../../app/database.json"
 
-interface NumSubsProps {
-  initialCount: number;
-}
 
-const NumSubs: React.FC<NumSubsProps> = ({ initialCount }) => {
-  const [count] = useState(initialCount);
+export default function NumSubs() {
+  const count = database.length;
+  
 
   return (
     <div className="bg-black text-white w-80 h-40 flex flex-col justify-center items-center rounded-lg shadow-lg p-4"
@@ -20,5 +19,3 @@ const NumSubs: React.FC<NumSubsProps> = ({ initialCount }) => {
     </div>
   );
 };
-
-export default NumSubs;

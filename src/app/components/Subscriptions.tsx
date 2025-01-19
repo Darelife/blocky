@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CompanyInfoWindow from "./CompanyInfoWindow";
+import database from "../../app/database.json";
 
 export default function Subscriptions() {
   const [activeCompany, setActiveCompany] = useState<string | null>(null);
@@ -10,16 +11,19 @@ export default function Subscriptions() {
 
   return (
     <div style={{ borderRadius: '10px', overflow: 'hidden', width: "25rem", margin: "0 auto", border: "1px solid #ccc", boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)" }}>
-      {["Netflix", "Amazon", "Google", "Mozilla", "Hotstar", "hbo", "fancode", "Hulu"].map((company) => (
+      {database.map((subscription) => (
         <CompanyInfoWindow
-          key={company}
-          companyName={company}
-          since="1997"
-          totalSpent={1000000}
+          key={subscription.id}
+          companyName={subscription.companyName}
+          since={subscription.dateSince}
+          totalSpent={subscription.Amount}
+          subscriber={subscription.subscriber}
+          beneficiary={subscription.beneficiary}
+          interval={subscription.Interval}
           inUsd={true}
           col1="#121212"
-          isActive={activeCompany === company}
-          onToggle={() => handleToggle(company)}
+          isActive={activeCompany === subscription.companyName}
+          onToggle={() => handleToggle(subscription.companyName)}
         />
       ))}
     </div>

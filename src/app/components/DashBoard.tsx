@@ -8,7 +8,7 @@ export default function DashBoard() {
       {/* <NumSubs initialCount={4} /> */}
       <Left />
       <Subscriptions />
-      <MonthlyCost cost={100} />
+      <MonthlyCost />
     </div>
   );
 }

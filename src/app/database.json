@@ -1,0 +1,99 @@
+[
+  {
+    "id": 1,
+    "subscriber":"0xd77c876c0d4fBbC992C5c7F53B76a9cECE72b18e",
+    "beneficiary":"0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+    "companyName":"Netflix",
+    "domainName":"netflix.com",
+    "dateSince":"2025-01-01",
+    "Interval":"Monthly",
+    "Amount":10,
+    "NextPayment":"2025-02-01",
+    "Active":"true"
+  },
+  {
+    "id": 2,
+    "subscriber":"0xd77c876c0d4fBbC992C5c7F53B76a9cECE72b18e",
+    "beneficiary":"0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+    "companyName":"Amazon",
+    "domainName":"amazon.com",
+    "dateSince":"2025-01-01",
+    "Interval":"Monthly",
+    "Amount":10,
+    "NextPayment":"2025-02-01",
+    "Active":"true"
+  },
+  {
+    "id": 3,
+    "subscriber":"0xd77c876c0d4fBbC992C5c7F53B76a9cECE72b18e",
+    "beneficiary":"0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+    "companyName":"Google",
+    "domainName":"google.com",
+    "dateSince":"2025-01-01",
+    "Interval":"Monthly",
+    "Amount":10,
+    "NextPayment":"2025-02-01",
+    "Active":"true"
+  },
+  {
+    "id": 4,
+    "subscriber":"0xd77c876c0d4fBbC992C5c7F53B76a9cECE72b18e",
+    "beneficiary":"0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+    "companyName":"mozilla",
+    "domainName":"mozilla.com",
+    "dateSince":"2025-01-01",
+    "Interval":"Monthly",
+    "Amount":10,
+    "NextPayment":"2025-02-01",
+    "Active":"true"
+  },
+  {
+    "id": 5,
+    "subscriber":"0xd77c876c0d4fBbC992C5c7F53B76a9cECE72b18e",
+    "beneficiary":"0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+    "companyName":"Hotstar",
+    "domainName":"hotstar.com",
+    "dateSince":"2025-01-01",
+    "Interval":"Monthly",
+    "Amount":10,
+    "NextPayment":"2025-02-01",
+    "Active":"true"
+  },
+  {
+    "id": 6,
+    "subscriber":"0xd77c876c0d4fBbC992C5c7F53B76a9cECE72b18e",
+    "beneficiary":"0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+    "companyName":"HBO",
+    "domainName":"hbo.com",
+    "dateSince":"2025-01-01",
+    "Interval":"Monthly",
+    "Amount":10,
+    "NextPayment":"2025-02-01",
+    "Active":"true"
+  },
+  {
+    "id": 7,
+    "subscriber":"0xd77c876c0d4fBbC992C5c7F53B76a9cECE72b18e",
+    "beneficiary":"0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+    "companyName":"Fan Code",
+    "domainName":"fancode.com",
+    "dateSince":"2025-01-01",
+    "Interval":"Monthly",
+    "Amount":10,
+    "NextPayment":"2025-02-01",
+    "Active":"true"
+  },
+  {
+    "id": 8,
+    "subscriber":"0xd77c876c0d4fBbC992C5c7F53B76a9cECE72b18e",
+    "beneficiary":"0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+    "companyName":"Hulu",
+    "domainName":"hulu.com",
+    "dateSince":"2025-01-01",
+    "Interval":"Monthly",
+    "Amount":10,
+    "NextPayment":"2025-02-01",
+    "Active":"true"
+  }
+  
+]
